@@ -13,7 +13,7 @@ namespace ParkingLogic
 {
     public class Parking
     {
-        private static Dictionary<CarType, double> PriceList = Settings.getPriceList();
+        private static Dictionary<CarType, double> PriceList = Settings.GetPriceList();
         private static int Timeout = Settings.Timeout;
         private static double Fine = Settings.Fine;
         private static int ParkingSpace = Settings.ParkingSpace;
@@ -34,7 +34,7 @@ namespace ParkingLogic
 
             ParkingBalance = 0;
 
-            TimerCallback calculateFunds = new TimerCallback(calculateFundsForAllCars);
+            TimerCallback calculateFunds = new TimerCallback(CalculateFundsForAllCars);
             Timer timer1 = new Timer(calculateFunds, null, 0, Timeout);
 
             TimerCallback serializeToFile = new TimerCallback(SerializeToFile);
@@ -43,17 +43,17 @@ namespace ParkingLogic
 
         }
 
-        public static Parking getInstance()
+        public static Parking GetInstance()
         {
             return instance.Value;
         }
 
-        public double getParkingRevenue()
+        public double GetParkingRevenue()
         {
             return ParkingBalance;
         }
 
-        public void addCar(Car car)
+        public void AddCar(Car car)
         {
             if (Cars.Count() < ParkingSpace)
             {
@@ -65,33 +65,33 @@ namespace ParkingLogic
             }
         }
 
-        public List<Car> getAllCars()
+        public List<Car> GetAllCars()
         {
             return Cars;
         }
 
-        public List<Transaction> getAllTransactions()
+        public List<Transaction> GetAllTransactions()
         {
             return Transactions;
         }
 
-        public void addCarBalance(double newBalance, Car car)
+        public void AddCarBalance(double newBalance, Car car)
         {
             car.Balance += newBalance;
         }
 
-        public void removeCar(Car car)
+        public void RemoveCar(Car car)
         {
             Cars.Remove(car);
         }
 
-        public int availablePlaces()
+        public int AvailablePlaces()
         {
             return ParkingSpace - Cars.Count;
         }
 
 
-        public void calculateFee(double newBalance, Car car)
+        public void CalculateFee(double newBalance, Car car)
         {
             ParkingBalance += newBalance;
             Transactions.Add(new Transaction
@@ -102,7 +102,7 @@ namespace ParkingLogic
             });
         }
 
-        private void calculateFundsForAllCars(object obj)
+        private void CalculateFundsForAllCars(object obj)
         {
             foreach (Car car in Cars)
             {

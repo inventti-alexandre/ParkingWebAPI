@@ -16,12 +16,12 @@ namespace ParkingLogic
             {CarType.Truck, 4}
         };
 
-        public static Dictionary<CarType, double> getPriceList()
+        public static Dictionary<CarType, double> GetPriceList()
         {
             return PriceList;
         }
 
-        public static void changePriceList(Dictionary<CarType, double> priceList)
+        public static void ChangePriceList(Dictionary<CarType, double> priceList)
         {
             PriceList = priceList;
         }
