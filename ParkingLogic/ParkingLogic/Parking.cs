@@ -22,7 +22,7 @@ namespace ParkingLogic
 
         private double ParkingBalance;
 
-        private static Parking instance;
+        private static readonly Lazy<Parking> instance = new Lazy<Parking>(() => new Parking());
 
         private Parking()
         {
@@ -43,12 +43,7 @@ namespace ParkingLogic
 
         public static Parking getInstance()
         {
-
-            if (instance == null)
-            {
-                instance = new Parking();
-            }
-            return instance;
+            return instance.Value;
         }
 
         public double getParkingRevenue()
