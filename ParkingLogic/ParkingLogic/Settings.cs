@@ -32,6 +32,8 @@ namespace ParkingLogic
 
         public static double Fine { get; set; } = 2;
 
+        public static string TransactionLogFileName { get; set; } = "Transaction log";
+
 
     }
 }

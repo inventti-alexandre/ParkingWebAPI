@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.Runtime.Serialization.Json;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -140,10 +141,10 @@ namespace ParkingLogic
             previousTransactions.Add(transactionsForPreviousMinute);
 
 
-            BinaryFormatter formatter = new BinaryFormatter();
+            DataContractJsonSerializer jsonFormatter = new DataContractJsonSerializer(typeof(List<SerializeTransactions>));
             using (FileStream fs = new FileStream(TransactionLogFileName, FileMode.OpenOrCreate))
             {
-                formatter.Serialize(fs, previousTransactions);
+                jsonFormatter.WriteObject(fs, previousTransactions);
 
                 Console.WriteLine("All transactions were serialized to Transaction.log file");
             }
@@ -156,14 +157,14 @@ namespace ParkingLogic
 
         public List<SerializeTransactions> DeserializeFromFile()
         {
-            BinaryFormatter formatter = new BinaryFormatter();
+            DataContractJsonSerializer jsonFormatter = new DataContractJsonSerializer(typeof(List<SerializeTransactions>));
             List<SerializeTransactions> transactionLog;
 
             try
             {
                 using (FileStream fs = new FileStream(TransactionLogFileName, FileMode.OpenOrCreate))
                 {
-                    transactionLog = (List<SerializeTransactions>)formatter.Deserialize(fs);
+                    transactionLog = (List<SerializeTransactions>)jsonFormatter.ReadObject(fs);
 
                 }
             }
