@@ -16,6 +16,7 @@ namespace ParkingLogic
         private static int Timeout = Settings.Timeout;
         private static double Fine = Settings.Fine;
         private static int ParkingSpace = Settings.ParkingSpace;
+        private static string TransactionLogFileName = Settings.TransactionLogFileName;
 
         private List<Car> Cars;
         private List<Transaction> Transactions;
@@ -140,7 +141,7 @@ namespace ParkingLogic
 
 
             BinaryFormatter formatter = new BinaryFormatter();
-            using (FileStream fs = new FileStream("Transactions.log", FileMode.OpenOrCreate))
+            using (FileStream fs = new FileStream(TransactionLogFileName, FileMode.OpenOrCreate))
             {
                 formatter.Serialize(fs, previousTransactions);
 
@@ -160,7 +161,7 @@ namespace ParkingLogic
 
             try
             {
-                using (FileStream fs = new FileStream("Transactions.log", FileMode.OpenOrCreate))
+                using (FileStream fs = new FileStream(TransactionLogFileName, FileMode.OpenOrCreate))
                 {
                     transactionLog = (List<SerializeTransactions>)formatter.Deserialize(fs);
 
