@@ -86,21 +86,19 @@ namespace ParkingWebAPI.Services
         public Car AddFunds(double balance, string id)
         {
             Car carOfIssue;
-            if (balance <= 0)
+            if (balance >= 0)
             {
-                throw new Exception("New balance can not be 0 or negative");
-
+                throw new Exception("New balance can not be negative");
+                
             }
 
             carOfIssue = parking.GetAllCars().Find(x => x.Id == id);
-            if (carOfIssue == null)
+            if(carOfIssue == null)
             {
                 throw new Exception("The car was not found");
             }
             carOfIssue.Balance += balance;
             return carOfIssue;
         }
-
-
     }
 }
