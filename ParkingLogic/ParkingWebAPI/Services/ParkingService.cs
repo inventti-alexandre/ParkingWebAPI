@@ -53,6 +53,26 @@ namespace ParkingWebAPI.Services
             }
         }
 
-       
+        public int GetAvailablePlaces()
+        {
+            return parking.AvailablePlaces();
+        }
+
+        public int GetOccupiedPlaces()
+        {
+            return parking.GetAllCars().Count;
+        }
+
+        public double GetParkingRevenue()
+        {
+            return parking.GetParkingRevenue();
+        }
+
+        public List<SerializeTransactions> ShowTransactionLog()
+        {
+            return parking.DeserializeFromFile();
+        }
+
+
     }
 }
