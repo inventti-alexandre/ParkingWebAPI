@@ -10,7 +10,7 @@ namespace ParkingLogic
     public class Transaction
     {
         public DateTime transactionDate { get; set; }
-        public int carId { get; set; }
+        public string carId { get; set; }
         public double funds { get; set; }
     }
 

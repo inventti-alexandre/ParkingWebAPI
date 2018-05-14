@@ -16,11 +16,11 @@ namespace ParkingLogic
 
     public class Car
     {
-        public int Id { get; set; }
+        public string Id { get; set; }
         public double Balance { get; set; }
         public CarType Type { get; set; }
 
-        public Car(CarType carType, double Balance, int Id)
+        public Car(CarType carType, double Balance, string Id)
         {
             this.Id = Id;
             this.Type = carType;
