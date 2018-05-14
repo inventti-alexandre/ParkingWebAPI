@@ -73,6 +73,11 @@ namespace ParkingWebAPI.Services
             return parking.DeserializeFromFile();
         }
 
+        public List<Transaction> GetCurrentTransactions()
+        {
+            return parking.GetAllTransactions();
+        }
+
 
     }
 }

@@ -25,5 +25,11 @@ namespace ParkingWebAPI.Controllers
         {
             return service.ShowTransactionLog();
         }
+
+        [HttpGet("GetCurrentTransactions")]
+        public List<Transaction> GetCurrentTransactions()
+        {
+            return service.GetCurrentTransactions();
+        }
     }
 }
