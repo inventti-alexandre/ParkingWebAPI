@@ -3,9 +3,9 @@ WebAPI application that emulates the operation of parking
 
 Please, see the detailed documentation regarding API methods
 
-**Car Service**
+<h3>Car Service</h3>
 
-Get All Cars
+**Get All Cars**
 
 URL: {{URL}}/car
 Method: GET
@@ -15,7 +15,7 @@ Method: GET
   --url '{{URL}}/api/car' 
 ```
 
-Get Car Details
+**Get Car Details**
 
 URL: {{URL}}/car/{id}
 Method: GET
@@ -25,7 +25,7 @@ Method: GET
   --url '{{URL}}/api/car/ee220f9f-a5b2-4355-a1c9-33701155995a' 
 ```
 
-Add the car
+**Add the car**
 
 URL: {{URL}}/car
 Method: POST
@@ -53,7 +53,7 @@ Supported Car Types are:
   --data '{"Balance": 1000, "Type": 2}'
 ```
 
-Remove the car
+**Remove the car**
 URL: {{URL}}/car/{id}
 Method: DELETE
 *Example:*
@@ -62,9 +62,9 @@ Method: DELETE
   --url '{{URL}}/api/car/ee220f9f-a5b2-4355-a1c9-33701155995a' 
 ```
 
-**Parking Service**
+<h3>Parking Service</h3>
 
-Get Available Places For Parking
+**Get Available Places For Parking**
 URL: {{URL}}/parking/GetAvailablePlaces
 Method: GET
 *Example:*
@@ -73,7 +73,7 @@ Method: GET
   --url '{{URL}}/api/parking/GetAvailablePlaces'  
 ```
 
-Get Occupied Places For Parking
+**Get Occupied Places For Parking**
 URL: {{URL}}/parking/GetOccupiedPlaces
 Method: GET
 *Example:*
@@ -82,7 +82,7 @@ Method: GET
   --url '{{URL}}/api/parking/GetOccupiedPlaces'  
 ```
 
-Get Parking Revenue
+**Get Parking Revenue**
 URL: {{URL}}/parking/GetRevenue
 Method: GET
 *Example:*
@@ -91,9 +91,9 @@ Method: GET
   --url '{{URL}}/api/parking/GetRevenue'
 ```
 
-**Transaction Service**
+<h3>Transaction Service</h3>
 
-Show Transaction Log
+**Show Transaction Log**
 URL: {{URL}}/transaction/ShowTransactionLog
 Method: GET
 *Example:*
@@ -102,7 +102,7 @@ Method: GET
   --url '{{URL}}/api/transaction/ShowTransactionLog'
 ```
 
-Get All Transaction For Previous Minute
+**Get All Transaction For Previous Minute**
 URL: {{URL}}/transaction/GetCurrentTransactions
 Method: GET
 *Example:*
@@ -111,7 +111,7 @@ Method: GET
   --url '{{URL}}/api/transaction/GetCurrentTransactions'
 ```
 
-Get All Transaction For Previous Minute For Specific Car
+**Get All Transaction For Previous Minute For Specific Car**
 URL: {{URL}}/transaction/GetCurrentTransactions/{id}
 Method: GET
 *Example:*
@@ -120,7 +120,7 @@ Method: GET
   --url 'http://localhost:58801/api/transaction/GetCurrentTransactions/28a6d88f-b386-4123-9166-a44cf45a6b0e' 
 ```
 
-AddFunds
+**AddFunds**
 URL: {{URL}}/transaction/AddFunds/{id}
 Method: PUT
 Headers:
