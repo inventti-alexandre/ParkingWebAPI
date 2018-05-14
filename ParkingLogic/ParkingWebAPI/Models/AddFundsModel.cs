@@ -10,4 +10,4 @@ namespace ParkingWebAPI.Models
         public double Balance { get; set; }
     }
 }
-}
+
