@@ -78,6 +78,11 @@ namespace ParkingWebAPI.Services
             return parking.GetAllTransactions();
         }
 
+        public IEnumerable<Transaction> GetCurrentTransactionsForCar(string id)
+        {
+            return parking.GetAllTransactions().Where(x => x.carId == id);
+        }
+
 
     }
 }

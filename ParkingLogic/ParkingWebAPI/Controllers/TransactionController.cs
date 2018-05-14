@@ -31,5 +31,11 @@ namespace ParkingWebAPI.Controllers
         {
             return service.GetCurrentTransactions();
         }
+
+        [HttpGet("GetCurrentTransactions/{id}")]
+        public IEnumerable<Transaction> GetCurrentTransactions(string id)
+        {
+            return service.GetCurrentTransactionsForCar(id);
+        }
     }
 }
