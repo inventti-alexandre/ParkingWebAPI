@@ -53,6 +53,54 @@ namespace ParkingWebAPI.Services
             }
         }
 
-       
+        public int GetAvailablePlaces()
+        {
+            return parking.AvailablePlaces();
+        }
+
+        public int GetOccupiedPlaces()
+        {
+            return parking.GetAllCars().Count;
+        }
+
+        public double GetParkingRevenue()
+        {
+            return parking.GetParkingRevenue();
+        }
+
+        public List<SerializeTransactions> ShowTransactionLog()
+        {
+            return parking.DeserializeFromFile();
+        }
+
+        public List<Transaction> GetCurrentTransactions()
+        {
+            return parking.GetAllTransactions();
+        }
+
+        public IEnumerable<Transaction> GetCurrentTransactionsForCar(string id)
+        {
+            return parking.GetAllTransactions().Where(x => x.carId == id);
+        }
+
+        public Car AddFunds(double balance, string id)
+        {
+            Car carOfIssue;
+            if (balance <= 0)
+            {
+                throw new Exception("New balance can not be 0 or negative");
+
+            }
+
+            carOfIssue = parking.GetAllCars().Find(x => x.Id == id);
+            if (carOfIssue == null)
+            {
+                throw new Exception("The car was not found");
+            }
+            carOfIssue.Balance += balance;
+            return carOfIssue;
+        }
+
+
     }
 }
