@@ -86,7 +86,7 @@ namespace ParkingWebAPI.Services
         public Car AddFunds(double balance, string id)
         {
             Car carOfIssue;
-            if (balance >= 0)
+            if (balance <= 0)
             {
                 throw new Exception("New balance can not be negative");
                 
