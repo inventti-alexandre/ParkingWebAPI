@@ -54,6 +54,7 @@ Supported Car Types are:<br/>
 ```
 
 **Remove the car**
+
 URL: {{URL}}/car/{id}<br/>
 Method: DELETE<br/>
 *Example:*
@@ -65,6 +66,7 @@ Method: DELETE<br/>
 <h3>Parking Service</h3>
 
 **Get Available Places For Parking**
+
 URL: {{URL}}/parking/GetAvailablePlaces<br/>
 Method: GET<br/>
 *Example:*
@@ -74,6 +76,7 @@ Method: GET<br/>
 ```
 
 **Get Occupied Places For Parking**
+
 URL: {{URL}}/parking/GetOccupiedPlaces<br/>
 Method: GET<br/>
 *Example:*
@@ -82,7 +85,7 @@ Method: GET<br/>
   --url '{{URL}}/api/parking/GetOccupiedPlaces'  
 ```
 
-**Get Parking Revenue**
+**Get Parking Revenue**<br/>
 URL: {{URL}}/parking/GetRevenue<br/>
 Method: GET<br/>
 *Example:*
@@ -94,6 +97,7 @@ Method: GET<br/>
 <h3>Transaction Service</h3>
 
 **Show Transaction Log**
+
 URL: {{URL}}/transaction/ShowTransactionLog<br/>
 Method: GET<br/>
 *Example:*
@@ -103,6 +107,7 @@ Method: GET<br/>
 ```
 
 **Get All Transaction For Previous Minute**
+
 URL: {{URL}}/transaction/GetCurrentTransactions<br/>
 Method: GET<br/>
 *Example:*
@@ -112,6 +117,7 @@ Method: GET<br/>
 ```
 
 **Get All Transaction For Previous Minute For Specific Car**
+
 URL: {{URL}}/transaction/GetCurrentTransactions/{id}<br/>
 Method: GET<br/>
 *Example:*
@@ -121,6 +127,7 @@ Method: GET<br/>
 ```
 
 **AddFunds**
+
 URL: {{URL}}/transaction/AddFunds/{id}<br/>
 Method: PUT<br/>
 Headers:
