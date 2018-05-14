@@ -3,7 +3,7 @@ WebAPI application that emulates the operation of parking
 
 Please, see the detailed documentation regarding API methods
 
-<h3>Car Service</h3>
+<h2>Car Service</h2>
 
 **Get All Cars**
 
@@ -63,7 +63,7 @@ Method: DELETE<br/>
   --url '{{URL}}/api/car/ee220f9f-a5b2-4355-a1c9-33701155995a' 
 ```
 
-<h3>Parking Service</h3>
+<h2>Parking Service</h2>
 
 **Get Available Places For Parking**
 
@@ -94,7 +94,7 @@ Method: GET<br/>
   --url '{{URL}}/api/parking/GetRevenue'
 ```
 
-<h3>Transaction Service</h3>
+<h2>Transaction Service</h2>
 
 **Show Transaction Log**
 
