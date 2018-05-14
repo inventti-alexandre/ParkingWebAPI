@@ -7,8 +7,8 @@ Please, see the detailed documentation regarding API methods
 
 **Get All Cars**
 
-URL: {{URL}}/car
-Method: GET
+URL: {{URL}}/car<br/>
+Method: GET<br/>
 *Example:*
 ```
  curl --request GET \
@@ -17,8 +17,8 @@ Method: GET
 
 **Get Car Details**
 
-URL: {{URL}}/car/{id}
-Method: GET
+URL: {{URL}}/car/{id}<br/>
+Method: GET<br/>
 *Example:*
 ```
  curl --request GET \
@@ -27,8 +27,8 @@ Method: GET
 
 **Add the car**
 
-URL: {{URL}}/car
-Method: POST
+URL: {{URL}}/car<br/>
+Method: POST<br/>
 Headers:
 ```
 Content-Type	application/json
@@ -40,11 +40,11 @@ Body:
    "Type": 1
 }
 ```
-Supported Car Types are:
-1 - Passenger,
-2 - Truck,
-3 - Bus,
-4 - Motorcycle
+Supported Car Types are:<br/>
+1 - Passenger,<br/>
+2 - Truck,<br/>
+3 - Bus,<br/>
+4 - Motorcycle<br/>
 *Example:*
 ```
   curl --request POST \
@@ -54,8 +54,8 @@ Supported Car Types are:
 ```
 
 **Remove the car**
-URL: {{URL}}/car/{id}
-Method: DELETE
+URL: {{URL}}/car/{id}<br/>
+Method: DELETE<br/>
 *Example:*
 ```
  curl --request DELETE \
@@ -65,8 +65,8 @@ Method: DELETE
 <h3>Parking Service</h3>
 
 **Get Available Places For Parking**
-URL: {{URL}}/parking/GetAvailablePlaces
-Method: GET
+URL: {{URL}}/parking/GetAvailablePlaces<br/>
+Method: GET<br/>
 *Example:*
 ```
   curl --request GET \
@@ -74,8 +74,8 @@ Method: GET
 ```
 
 **Get Occupied Places For Parking**
-URL: {{URL}}/parking/GetOccupiedPlaces
-Method: GET
+URL: {{URL}}/parking/GetOccupiedPlaces<br/>
+Method: GET<br/>
 *Example:*
 ```
   curl --request GET \
@@ -83,8 +83,8 @@ Method: GET
 ```
 
 **Get Parking Revenue**
-URL: {{URL}}/parking/GetRevenue
-Method: GET
+URL: {{URL}}/parking/GetRevenue<br/>
+Method: GET<br/>
 *Example:*
 ```
  curl --request GET \
@@ -94,8 +94,8 @@ Method: GET
 <h3>Transaction Service</h3>
 
 **Show Transaction Log**
-URL: {{URL}}/transaction/ShowTransactionLog
-Method: GET
+URL: {{URL}}/transaction/ShowTransactionLog<br/>
+Method: GET<br/>
 *Example:*
 ```
  curl --request GET \
@@ -103,8 +103,8 @@ Method: GET
 ```
 
 **Get All Transaction For Previous Minute**
-URL: {{URL}}/transaction/GetCurrentTransactions
-Method: GET
+URL: {{URL}}/transaction/GetCurrentTransactions<br/>
+Method: GET<br/>
 *Example:*
 ```
  curl --request GET \
@@ -112,8 +112,8 @@ Method: GET
 ```
 
 **Get All Transaction For Previous Minute For Specific Car**
-URL: {{URL}}/transaction/GetCurrentTransactions/{id}
-Method: GET
+URL: {{URL}}/transaction/GetCurrentTransactions/{id}<br/>
+Method: GET<br/>
 *Example:*
 ```
  curl --request GET \
@@ -121,8 +121,8 @@ Method: GET
 ```
 
 **AddFunds**
-URL: {{URL}}/transaction/AddFunds/{id}
-Method: PUT
+URL: {{URL}}/transaction/AddFunds/{id}<br/>
+Method: PUT<br/>
 Headers:
 ```
 Content-Type	application/json
