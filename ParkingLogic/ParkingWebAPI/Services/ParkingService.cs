@@ -83,6 +83,24 @@ namespace ParkingWebAPI.Services
             return parking.GetAllTransactions().Where(x => x.carId == id);
         }
 
+        public Car AddFunds(double balance, string id)
+        {
+            Car carOfIssue;
+            if (balance <= 0)
+            {
+                throw new Exception("New balance can not be 0 or negative");
+
+            }
+
+            carOfIssue = parking.GetAllCars().Find(x => x.Id == id);
+            if (carOfIssue == null)
+            {
+                throw new Exception("The car was not found");
+            }
+            carOfIssue.Balance += balance;
+            return carOfIssue;
+        }
+
 
     }
 }
